@@ -74,6 +74,8 @@ class ORMUnitTestCase {
     void hhh123Test(SessionFactoryScope scope) throws Exception {
         scope.inTransaction(session -> {
 
+            session.clear();
+
             final var grandParent = new GrandParent();
             session.persist(grandParent);
             logger.info("grandParent: " + grandParent);
